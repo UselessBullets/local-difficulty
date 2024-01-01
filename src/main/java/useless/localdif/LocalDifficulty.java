@@ -1,5 +1,6 @@
 package useless.localdif;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.gui.options.components.OptionsCategory;
 import net.minecraft.client.gui.options.components.OptionsComponent;
@@ -16,15 +17,11 @@ import useless.localdif.mixins.ButtonComponentAccessor;
 import useless.localdif.mixins.OptionsCategoryAccessor;
 
 
-public class LocalDifficulty implements ModInitializer {
+public class LocalDifficulty implements ClientModInitializer {
     public static final String MOD_ID = "localdif";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static GameRuleInteger difficulty = GameRules.register(new GameRuleInteger("difficulty", 2));
 	public static ToggleableOptionComponent<Difficulty> suffering;
-    @Override
-    public void onInitialize() {
-		LOGGER.info("LocalDifficulty initialized.");
-    }
 	public static ToggleableOptionComponent<Difficulty> getDifficultyComp(){
 		if (suffering != null){
 			return suffering;
@@ -45,5 +42,10 @@ public class LocalDifficulty implements ModInitializer {
 			}
 		}
 		throw new RuntimeException("suffering cannot be found!!!");
+	}
+
+	@Override
+	public void onInitializeClient() {
+		LOGGER.info("LocalDifficulty initialized.");
 	}
 }

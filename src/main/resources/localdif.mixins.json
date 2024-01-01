@@ -4,11 +4,11 @@
   "package": "useless.localdif.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ButtonComponentAccessor",
-    "OptionsCategoryAccessor",
-    "ToggleableOptionComponentAccessor"
   ],
   "client": [
+    "ButtonComponentAccessor",
+    "OptionsCategoryAccessor",
+    "ToggleableOptionComponentAccessor",
     "GameSettingsMixin",
     "MinecraftMixin",
     "PlayerControllerSPMixin"
