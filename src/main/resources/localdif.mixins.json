@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "useless.localdif.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ButtonComponentAccessor",
+    "OptionsCategoryAccessor",
+    "ToggleableOptionComponentAccessor"
+  ],
+  "client": [
+    "GameSettingsMixin",
+    "MinecraftMixin",
+    "PlayerControllerSPMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

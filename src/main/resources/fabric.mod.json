@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "localdif",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Local Difficulty",
+  "description": "Local World Difficulty",
+	"icon": "icon.png",
   "authors": [
-    "Turnip Labs"
+    "Useless"
   ],
   "contact": {
     "homepage": "",
@@ -18,11 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-        "turniplabs.examplemod.ExampleMod"
+        "useless.localdif.LocalDifficulty"
     ]
   },
   "mixins": [
-      "examplemod.mixins.json"
+      "localdif.mixins.json"
   ],
 
   "depends": {
