@@ -18,8 +18,8 @@ public class PlayerControllerSPMixin extends PlayerController {
 	public void initLevel(World world) {
 		if (world != null){
 			final Difficulty[] difficulties = new Difficulty[]{Difficulty.PEACEFUL, Difficulty.EASY, Difficulty.NORMAL, Difficulty.HARD};
-			mc.gameSettings.difficulty.set(difficulties[Math.min(Math.max(world.getGameRule(LocalDifficulty.difficulty), 0), 3)]);
-			((ToggleableOptionComponentAccessor)LocalDifficulty.getDifficultyComp()).getSlider().sliderValue = world.getGameRule(LocalDifficulty.difficulty);
+			mc.gameSettings.difficulty.set(difficulties[Math.min(Math.max(world.getGameRuleValue(LocalDifficulty.difficulty), 0), 3)]);
+			((ToggleableOptionComponentAccessor)LocalDifficulty.getDifficultyComp()).getSlider().sliderValue = world.getGameRuleValue(LocalDifficulty.difficulty);
 			((ToggleableOptionComponentAccessor)LocalDifficulty.getDifficultyComp()).getSlider().displayString = mc.gameSettings.difficulty.getDisplayString();
 			mc.gameSettings.difficulty.onUpdate();
 		}

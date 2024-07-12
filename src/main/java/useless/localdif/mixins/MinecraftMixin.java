@@ -20,10 +20,10 @@ public class MinecraftMixin {
 
 	@Redirect(method = "runTick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/option/enums/Difficulty;id()I"))
 	private int getDifficultyFromGamerule(Difficulty instance){
-		return theWorld.getGameRule(LocalDifficulty.difficulty);
+		return theWorld.getGameRuleValue(LocalDifficulty.difficulty);
 	}
 	@Redirect(method = "runTick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/world/World;setAllowedMobSpawns(ZZ)V"))
 	private void setSpawnValueProperly(World instance, boolean flag, boolean flag1){
-		instance.setAllowedMobSpawns(theWorld.getGameRule(LocalDifficulty.difficulty) != 0, flag1);
+		instance.setAllowedMobSpawns(theWorld.getGameRuleValue(LocalDifficulty.difficulty) != 0, flag1);
 	}
 }
